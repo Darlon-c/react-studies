@@ -5,6 +5,7 @@ export default function App() {
   return (
     <>
       <Profile
+        set="add"
         avatar={picture}
         name="Darlon"
         bio="Desenvolvedor Front-end"
