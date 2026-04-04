@@ -1,4 +1,5 @@
 import Info from "./Info";
+import BtnLink from "./BtnLink";
 
 export default function Profile(props) {
   return (
@@ -12,28 +13,24 @@ export default function Profile(props) {
 
       <p className="text-gray-700 text-center px-4">{props.bio}</p>
 
-    
-        <div className="text-center space-y-2 w-full">
-          <Info className="text-gray-600">{props.phone}</Info>
-          <Info className="text-gray-600">{props.email}</Info>
-        </div>
-      
+      <div className="text-center space-y-2 w-full">
+        <Info className="text-gray-600">{props.phone}</Info>
+        <Info className="text-gray-600">{props.email}</Info>
+      </div>
 
       <div className="flex gap-4 justify-center mt-2">
-        <a
+        <BtnLink
           href={props.githubUrl}
-          target="_blank"
           className="bg-gray-800 text-white px-5 py-2 rounded-lg hover:bg-gray-900 transition-colors"
         >
           GitHub
-        </a>
-        <a
+        </BtnLink>
+        <BtnLink
           href={props.linkedinUrl}
-          target="_blank"
           className="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition-colors"
         >
           LinkedIn
-        </a>
+        </BtnLink>
       </div>
     </div>
   );
