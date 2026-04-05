@@ -18,7 +18,7 @@ export default function Profile(props) {
         <Info className="text-gray-600">{props.email}</Info>
       </div>
 
-      <div className="flex gap-4 justify-center mt-2">
+      <BtnLink className="flex gap-4 justify-center mt-2">
         <BtnLink
           href={props.githubUrl}
           className="bg-gray-800 text-white px-5 py-2 rounded-lg hover:bg-gray-900 transition-colors"
@@ -31,7 +31,7 @@ export default function Profile(props) {
         >
           LinkedIn
         </BtnLink>
-      </div>
+      </BtnLink>
     </div>
   );
 }
