@@ -1,12 +1,15 @@
 import Info from "./Info";
 import BtnLink from "./BtnLink";
-
-function handleClick(ev) {
-  console.log(ev);
-  alert("Seguindo!");
-}
+import { useState } from "react";
 
 export default function Profile(props) {
+  const [followText, setFollowText] = useState("Follow");
+
+  function handleClick(ev) {
+    alert("Seguindo!");
+    setFollowText("Following");
+  }
+
   return (
     <div className="flex flex-col items-center max-w-2xl gap-4 p-6 mx-auto bg-gray-200 rounded-2xl mt-30">
       <img
@@ -42,7 +45,7 @@ export default function Profile(props) {
         className="px-5 py-2 text-white transition-colors rounded-lg bg-emerald-600 hover:bg-emerald-700"
         onClick={handleClick}
       >
-        Follow
+        {followText}
       </button>
     </div>
   );
