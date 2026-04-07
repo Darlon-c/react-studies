@@ -1,7 +1,11 @@
 import Counter from "./components/Counter";
+import Show from "./components/Show";
 
 export default function App() {
-  return <>
-   <Counter></Counter>
-  </>;
+  return (
+    <>
+      <Show></Show>
+      <Counter></Counter>
+    </>
+  );
 }
