@@ -6,6 +6,7 @@ export default function Password() {
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$";
 
   const [pass, setPass] = useState("");
+  const [textCopy, setTextCopy] = useState("Copiar")
 
   function generatePassword() {
     let result = "";
@@ -16,6 +17,7 @@ export default function Password() {
     }
 
     setPass(result);
+    setTextCopy("Copiar")
   }
 
   function copy() {
@@ -24,6 +26,7 @@ export default function Password() {
       return;
     } else {
       navigator.clipboard.writeText(pass);
+      setTextCopy("Copiado!")
       alert("Senha copiada com sucesso!");
     }
   }
@@ -45,7 +48,7 @@ export default function Password() {
           className="px-2 py-1 border rounded bg-amber-500 hover:bg-amber-700"
           onClick={copy}
         >
-          Copiar
+          {textCopy}
         </button>
       </div>
     </>
