@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Input from "./Input";
 
 export default function Password() {
   const characters =
@@ -37,16 +38,7 @@ export default function Password() {
         <h1>Gerador de senhas</h1>
       </div>
       <div className="flex justify-center gap-4 py-12">
-        <div className="flex gap-4 py-1 border rounded">
-          <label htmlFor="passwordSize">Tamanho:</label>
-          <input
-            type="number"
-            min={1}
-            value={passwordSize}
-            className="text-center"
-            onChange={(ev) => setPasswordSize(Number(ev.target.value))} 
-          />
-        </div> <br />
+        <Input passwordSize={passwordSize} setPasswordSize={setPasswordSize} ></Input> <br />
         <span className="font-semibold text-center">{pass}</span>
         <button
           className="px-2 py-1 border rounded bg-emerald-500 hover:bg-emerald-700"
