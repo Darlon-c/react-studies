@@ -17,7 +17,6 @@ export default function Password() {
       const randomIndex = Math.floor(Math.random() * characters.length);
       result += characters[randomIndex];
     }
-
     setPass(result);
     setTextCopy("Copiar");
   }
