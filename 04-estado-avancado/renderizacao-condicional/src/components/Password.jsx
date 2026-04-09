@@ -1,4 +1,4 @@
-import { use, useState } from "react";
+import { useState } from "react";
 import Input from "./Input";
 
 export default function Password() {
