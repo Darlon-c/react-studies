@@ -85,7 +85,15 @@ export default function App() {
   return (
     <>
       <div>
-        
+        {games.map((game) => {
+          return (
+            <div key={game.id}>
+              <img width="300px" src={game.coverImage} alt={game.title} />
+              <h2>{game.title} - {game.releaseYear}</h2>
+              <p>{game.description}</p>
+            </div>
+          );
+        })}
       </div>
     </>
   );
