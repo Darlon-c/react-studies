@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 export default function App() {
+  const [games, setGames] = useState([])
   const [title, setTitle] = useState("");
   const [cover, setCover] = useState("");
 
@@ -12,13 +13,16 @@ export default function App() {
 
   const handleSubmit = (ev) => {
     ev.preventDefault();
+    console.log({title, cover})
+    setTitle("")
+    setCover("")
   };
 
   return (
     <>
       <div>
         <h1>Biblioteca de Jogos</h1>
-        <form className="flex justify-center gap-4">
+        <form className="flex justify-center gap-4" onSubmit={handleSubmit}>
           <div>
             <label htmlFor="title">Título:</label>
             <input
