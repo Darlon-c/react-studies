@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import ExampleRef from "./components/ExampleRef";
 
 export default function App() {
   let variable = 0;
@@ -16,6 +17,9 @@ export default function App() {
 
   return (
     <>
+      <h1>Exemplo de ref</h1>
+      <ExampleRef></ExampleRef>
+      <hr />
       <div>UseRef</div>
       <hr />
       <p>Variável: {variable}</p>
