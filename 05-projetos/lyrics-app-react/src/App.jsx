@@ -7,7 +7,7 @@ export default function App() {
   const [error, setError] = useState("");
   const [musicInfo, setMusicInfo] = useState({ track: "", artist: "" });
 
-  const buscarLetra = async () => {
+  const findLyrics = async () => {
     if (!musicName.trim()) {
       setError("Por favor, digite o nome de uma música!");
       return;
@@ -30,11 +30,11 @@ export default function App() {
         return;
       }
 
-      const primeiraMusica = data[0];
-      setLyrics(primeiraMusica.plainLyrics || "Letra não disponível.");
+      const firstMusic = data[0];
+      setLyrics(firstMusic.plainLyrics || "Letra não disponível.");
       setMusicInfo({
-        track: primeiraMusica.trackName,
-        artist: primeiraMusica.artistName,
+        track: firstMusic.trackName,
+        artist: firstMusic.artistName,
       });
 
       setMusicName("");
@@ -114,11 +114,11 @@ export default function App() {
             type="text"
             value={musicName}
             onChange={(e) => setMusicName(e.target.value)}
-            onKeyPress={(e) => e.key === "Enter" && buscarLetra()}
+            onKeyPress={(e) => e.key === "Enter" && findLyrics()}
             placeholder="Ex: Bohemian Rhapsody"
           />
           <button
-            onClick={buscarLetra}
+            onClick={findLyrics}
             disabled={loading}
             className="px-6 py-3 font-semibold text-white transition-colors shadow-md bg-emerald-500 hover:bg-emerald-700 rounded-xl active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
           >
